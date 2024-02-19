@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Lato-utf8;
+    src: url(Lato-Regular.ttf)
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato-utf8;
+    color: #fff;
+    overflow: hidden;
+}
+
+body{
+    background: #99CFE9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+    overflow: hidden;
+    padding: 20vh 32px;
+    gap: 2rem;
+    position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+a{
+    text-decoration: none;
+}
+
+
+img{
+    width: 30%;
+    height: auto;
+}
+
+h1{
+    font-size: 24px;
+}
+
+h2{
+    font-size: 24px;
+    word-wrap: normal;
+    overflow: visible;
+    width: 20ch;
+}
+h5{
+    display: none;
+}
+
+.tacin{
+    display: flex;
+    background: #0099D1;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+.p{
+    animation-name: greenchange;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+h3{
+    width: 19px;
+}
+
+.n{
+    animation-name: redchange;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes greenchange {
+    from {
+        background: #0099D1;
+    }
+    to {
+        background: #76b82a;
+    }
+  }
+
+@keyframes redchange {
+    from {
+        background: #0099D1;
+    }
+    to {
+        background: #ea516d;
+    }
+  }

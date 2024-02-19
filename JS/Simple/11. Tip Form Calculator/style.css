@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Lato;
+}
+
+body{
+    background: rgb(141, 190, 223);
+}
+
+main{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 50%;
+    width: 40%;
+    background: #fff;
+    border: 1px transparent;
+    border-radius: 10px;
+    max-height: 100%;
+}
+
+h1{
+    background: #336699;
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem 0;
+    border-radius: 2px;
+}
+
+h2{
+    font-size: 1.2rem;
+    color: #444;
+}
+
+input{
+    width: 100%;
+    height: 90%;
+    border: 0.1px #bbb solid;
+    border-radius: 4px;
+}
+
+select{
+    width: 100%;
+    height: 90%;
+    border: 0.1px #bbb solid;
+    border-radius: 4px;
+}
+
+.flex{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+button{
+    margin-top: 0.4rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10%;
+    background: #336699;
+    border: transparent;
+    border-radius: 4px;
+    color: #fff;
+}
+
+section{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.frame{
+    background: rgb(219, 91, 91);
+    display: none;
+    width: 70%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    color: #fff;
+}
+
+.frame2{
+    background: #336699;
+    padding: 0.5rem;
+    width: 70%;
+    margin: 0.5rem auto;
+    display: none;
+    color: #fff;
+}
+

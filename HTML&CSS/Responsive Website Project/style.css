@@ -1,0 +1,78 @@
+body{
+	margin: 0;
+	font-family: 'Lato';
+}
+
+.image{
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-image: url(lake.jpg);
+}
+
+.image_overlay{
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+
+}
+
+.buttons{
+	display: flex;
+	position: absolute;
+	width: 30%;
+	height: 5vh;
+	top: 50%;
+	bottom: 50%;
+	left: 50%;
+	right: 50%;
+}
+
+.buttons a{
+	text-decoration: none;
+	color: #fff;
+	margin: 20px 2px 0 2px;
+	border-radius: 200px;
+	border: 2px solid #fff;
+	font-size: 50px;
+
+}
+
+.image_overlay h1{
+	margin: 1% 0 0 5%;
+
+}
+
+.image_overlay ul{
+	margin: 1% 5% 0 0;
+	display: flex;
+	width: 20%;
+	justify-content: space-between;
+	list-style: none;
+	
+}
+
+.image_overlay ul li a:link,
+.image_overlay ul li a:visited{
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-bottom: 2px solid transparent;
+
+	
+	
+}
+
+.image_overlay ul li a:hover,
+.image_overlay ul li a:active{
+	transition: border-bottom 0.5s;
+	border-bottom: 2px solid #fff;
+	
+}

@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Lato;
+}
+
+body {
+    background: var(--third-color);
+}
+
+:root{
+    --primary-color: #444;
+    --secondary-color: #333;
+    --third-color: #555;
+}
+
+main{
+    width: 60%;
+    margin: 2rem auto 0 auto;
+    height: auto;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: left;
+    justify-content: space-around;
+    margin-left: 1rem;
+    gap: 1rem;
+}
+
+section{
+    height: 80%;
+    margin: 0 0 1rem 0.3rem;
+}
+
+li{
+    list-style: none;
+    text-decoration: none;
+    background: #eee;
+    color: var(--primary-color);
+    width: 90%;
+    padding: 0.2rem;
+    margin: 0.3rem 0.3rem 0.3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    margin: 1rem 0 0 0;
+}
+
+h1{
+    margin-left: 0.3rem;
+}
+
+.addTask{
+    margin-left: 0.3rem;
+}
+
+i{
+    margin-right: 1rem;
+    cursor: pointer;
+}

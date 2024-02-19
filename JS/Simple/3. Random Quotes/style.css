@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(170, 125, 125);
+  font-family: Lato;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background-color: rgb(194, 179, 179);
+  padding: 3rem;
+}
+
+button{
+    width: 30%;
+    padding: 1em;
+    background-color: rgb(108, 187, 108);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+}
+
+p{
+    font-size: 1.5rem;
+    color: #474747;
+}
+
+h1{
+    text-align: right;
+    width: 100%;
+}

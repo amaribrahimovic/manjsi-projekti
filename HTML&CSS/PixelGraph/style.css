@@ -1,0 +1,157 @@
+* {
+	margin-right: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	text-rendering: optimizeLegibility;
+}
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto 0 auto;
+}
+
+body{
+	font-family: Lato;
+	margin: 0;
+}
+
+header{
+	background-color: #0AD3FF;
+	color: #fff;
+	font-weight: 300;
+	padding-top: 3rem;
+	background-size: cover;
+	background-position: center;
+	height: 12vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #fff;
+}
+
+header .title h1{
+	margin: 0;
+	padding-left: 5%;
+	font-size: 40px; 
+}
+
+.title{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	padding: 0 5% 50px 5%;
+
+}
+
+.image{
+	height: 88vh;
+	width: 1920px;
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)) , url(lake.jpg);
+	background-position: center;
+	background-size: cover;
+	left: 50%;
+	top: 50%;
+	max-width: 2000px;
+	min-width: 100px;
+	align-items: center;
+}
+
+.image-text{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+
+}
+
+.image-text h1{
+	
+	color: #fff;
+	font-size: 50px;
+}
+
+.image-text a{
+	text-decoration: none;
+
+}
+
+.a1{
+	padding: 10px 30px;
+	background-color: #0AD3FF;
+	color: #fff;
+	text-align: center;
+	border-radius: 200px;
+	font-size: 36px;
+	width: 150px;
+	font-weight: 300;
+	border: 1px solid #0AD3FF;
+	margin-left: 5px;
+}
+
+.a2{
+	padding: 10px 30px;
+	color: #fff;
+	text-align: center;
+	border: 2px solid #0AD3FF;
+	border-radius: 200px;
+	font-size: 36px;
+	width: 296px;
+	font-weight: 300;
+	margin-left: 10px;
+}
+
+
+ul{
+	display: flex;
+	list-style: none;
+	flex-basis: 25%;
+	margin: 0;
+	justify-content: space-around;
+	text-decoration: none;
+	text-transform: none;
+	text-shadow: none;
+
+}
+
+ul li{
+	font-size: 32px;
+	text-decoration: none;
+	text-transform: none;
+	text-shadow: none;
+}
+
+ul li:hover,
+ul li:active{
+	color: #000;
+	font-size: 32px;
+	transition: color 0.5s;
+	text-decoration: none;
+	text-transform: none;
+	text-shadow: none;
+}
+
+.contact{
+	width: 30%;
+	margin: 2% 35%;
+	border: 2px solid #fff;
+	border-radius: 20px;
+	background-color: #0AD3FF;
+	color: #fff;
+}
+
+.contact h1{
+	margin-left: 3%;
+}
+
+.contact p{
+	margin: 0 3% 2% 3%;
+	font-size: 110%;
+	font-weight: 300;
+}
+

@@ -1,0 +1,19 @@
+{
+    "products":{
+        "1":{
+            "name": "Milk",
+            "price": "1",
+            "imgUrl": "https://i.postimg.cc/VkPjWWSh/milk.jpg"
+        },
+        "2":{
+            "name": "Eggs",
+            "price": "2",
+            "imgUrl": "https://i.postimg.cc/vHVrnNm9/eggs.jpg"
+        },
+        "3":{
+            "name": "Croissant",
+            "price": "3",
+            "imgUrl": "https://i.postimg.cc/P5b13vY5/croissant.jpg"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+body{
+    background-color: #dd6cdd;
+}
+
+button{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: none;
+    padding: 1rem;
+    border: #343434 solid 1px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

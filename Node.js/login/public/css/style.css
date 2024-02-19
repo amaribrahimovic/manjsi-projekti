@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 17%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  background: #fa941d;
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 100%;
+}

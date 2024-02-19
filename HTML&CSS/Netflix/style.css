@@ -1,0 +1,90 @@
+html {
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+
+}
+
+
+
+
+#heading {
+	font-family: Raleway;
+	color: #fff;
+	font-size: 80px;
+	position: relative;
+	left: 1.5%;
+	margin-top: 14rem;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.button {
+	color: #fff;
+	background-color: #e50914;
+	border: 0;
+	font-family: Lato;
+	font-size: 23px;
+	font-weight: 300;
+	padding: 10px 30px;
+	border-radius: 3px;
+	display: inline-block;
+	margin-left: 1.9rem;
+	text-decoration: none;
+}
+
+.button1 {
+	float: right;
+	background-color: #e50914;
+	color: #fff;
+	border: 0;
+	font-family: Lato;
+	font-size: 23px;
+	font-weight: 300;
+	padding: 7px 20px;
+	display: block;
+	border-radius: 3px;
+	margin-right: 1.6rem;
+	margin-top: 1.5rem;
+	text-decoration: none;
+}
+
+.button1 > a{
+	text-decoration: none;
+	color: #fff;
+}
+
+#text {
+	color: #fff;
+	font-family: Lato;
+	font-weight: 400;
+	position: relative;
+	left: 1.5%;
+	margin-top: 1.4rem;
+	padding: 0;
+
+}
+
+header{
+	margin-left: 1.7rem;
+	margin-right: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90%;
+	max-width: 220px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+
+.container img{
+	width: 100%;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+
+}

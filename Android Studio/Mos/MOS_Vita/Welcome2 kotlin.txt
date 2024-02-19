@@ -1,0 +1,167 @@
+package com.example.welcomev2
+
+import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import com.aldebaran.qi.sdk.design.activity.RobotActivity.onCreate
+import com.aldebaran.qi.sdk.design.activity.RobotActivity.setContentView
+import com.aldebaran.qi.sdk.design.activity.RobotActivity.onDestroy
+import com.aldebaran.qi.sdk.design.activity.RobotActivity
+import com.aldebaran.qi.sdk.RobotLifecycleCallbacks
+import com.aldebaran.qi.sdk.QiContext
+import com.aldebaran.qi.sdk.``object`
+import com.aldebaran.qi.sdk.`object`.actuation.Animation
+import java.util.HashMap
+
+class MainActivity : RobotActivity(), RobotLifecycleCallbacks {
+    private var qiContext: QiContext? = null
+    private val TAG = "WelcomeV2"
+    private var chat: Chat? = null
+    private var anim_build: Animation? = null
+    private var animate_anim: Animate? = null
+    private var say: Say? = null
+    private val humanAwareness: HumanAwareness? = null
+    private var headTouchSensor: TouchSensor? = null
+    private var mediaPlayer: MediaPlayer? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i(TAG, "onCreate() called")
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        QiSDK.register(this, this)
+        mediaPlayer = MediaPlayer()
+    }
+
+    override fun onDestroy() {
+        Log.i(TAG, "onDestroy() called")
+        super.onDestroy()
+        QiSDK.unregister(this, this)
+    }
+
+    override fun onRobotFocusGained(qiContext: QiContext) {
+        Log.i(TAG, "onRobotFocusGained() called")
+        this.qiContext = qiContext
+        val touch = qiContext.touch
+        headTouchSensor = touch.getSensor("Head/Touch")
+        headTouchSensor.addOnStateChangedListener(TouchSensor.OnStateChangedListener { touchState: TouchState ->
+            Log.i(TAG, "Sensor " + (if (touchState.getTouched()) "touched" else "released") + " at " + touchState.getTime())
+            doanimatefromchat(R.raw.nicereaction_a002)
+        })
+        presentation()
+    }
+
+    override fun onRobotFocusLost() {
+        if (chat != null) chat.removeAllOnStartedListeners()
+        qiContext = null
+        if (headTouchSensor != null) headTouchSensor.removeAllOnStateChangedListeners()
+    }
+
+    override fun onRobotFocusRefused(reason: String) {}
+    fun presentation() {
+        doanimate(R.raw.hello_a010)
+        speak("Hello my friend")
+        startChat() //runs chat
+    }
+
+    fun startChat() {
+        val topic: Topic = TopicBuilder.with(qiContext)
+                .withResource(R.raw.main_topic_210821)
+                .build()
+        val chatbot: QiChatbot = QiChatbotBuilder.with(qiContext)
+                .withTopic(topic)
+                .build()
+        chat = ChatBuilder.with(qiContext)
+                .withChatbot(chatbot)
+                .build()
+        val executors: HashMap<String, QiChatExecutor> = HashMap<String, QiChatExecutor>()
+        executors["showPicture"] = showPicture(qiContext)
+        executors["showAnimation"] = showAnimation(qiContext)
+        executors["playMedia"] = PlayMediaExecutor(qiContext)
+        chatbot.setExecutors(executors)
+        chat.addOnStartedListener(Chat.OnStartedListener { Log.i(TAG, "Discussion started.") })
+        chat.run()
+        //chat.async().run();
+    }
+
+    fun doanimate(animResource: Int?) {
+        anim_build = AnimationBuilder.with(qiContext).withResources(animResource).build()
+        animate_anim = AnimateBuilder.with(qiContext).withAnimation(anim_build).build()
+        animate_anim.run()
+    }
+
+    fun speak(text: String?) {
+        say = SayBuilder.with(qiContext).withText(text).build()
+        say.run()
+    }
+
+    private inner class showPicture internal constructor(private val qiContext: QiContext?) : BaseQiChatExecutor(qiContext) {
+        override fun runWith(params: List<String>) {
+            if (params.size <= 0) return
+            val imageName = params[0]
+            val imageId = resources.getIdentifier(imageName, "drawable", packageName)
+            runOnUiThread {
+                val splashScreen = findViewById<ImageView>(R.id.splashscreen)
+                splashScreen.setImageResource(imageId)
+                splashScreen.visibility = View.VISIBLE
+            }
+        }
+
+        override fun stop() {}
+    }
+
+    private inner class showAnimation internal constructor(private val qiContext: QiContext?) : BaseQiChatExecutor(qiContext) {
+        override fun runWith(params: List<String>) {
+            if (params.size <= 0) return
+            var animationName: String? = null
+            when (params[0]) {
+                "dance" -> animationName = "dance_b002"
+                "hello" -> animationName = "hello_a010"
+                "bow" -> animationName = "bow_a001"
+                "left_hand" -> animationName = "raise_left_hand_b006"
+                "right_hand" -> animationName = "raise_right_hand_b004"
+                "both_hands" -> animationName = "raise_both_hands_b003"
+                "guitar" -> animationName = "guitar_a001"
+                "think" -> animationName = "thinking_a002"
+                "gorilla" -> animationName = "gorilla_a001"
+            }
+            val animationID = resources.getIdentifier(animationName, "raw", packageName)
+            doanimatefromchat(animationID) //animacija ni asinhrona torej če želimo da deluje
+        }
+
+        override fun stop() {}
+    }
+
+    fun doAnimationAsync(animationResource: Int) {
+        val animation: Animation = AnimationBuilder.with(qiContext).withResources(animationResource).build()
+        val animate: Animate = AnimateBuilder.with(qiContext).withAnimation(animation).build()
+        animate.async().run()
+    }
+
+    fun doAnimation(animationResource: Int) {
+        val animation: Animation = AnimationBuilder.with(qiContext).withResources(animationResource).build()
+        val animate: Animate = AnimateBuilder.with(qiContext).withAnimation(animation).build()
+        animate.run()
+    }
+
+    fun doanimatefromchat(animRes: Int?) {
+        anim_build = AnimationBuilder.with(qiContext).withResources(animRes).build()
+        animate_anim = AnimateBuilder.with(qiContext).withAnimation(anim_build).build()
+        animate_anim.async().run()
+    }
+
+    internal inner class PlayMediaExecutor(private val qiContext: QiContext?) : BaseQiChatExecutor(qiContext) {
+        override fun runWith(params: List<String>) {
+            if (params.size <= 0) return
+            val media = params[0]
+            val mediaResource = resources.getIdentifier(media, "raw", packageName)
+            playMedia(mediaResource)
+        }
+
+        override fun stop() {}
+    }
+
+    fun playMedia(mediaSource: Int) {
+        mediaPlayer.reset()
+        mediaPlayer = MediaPlayer.create(applicationContext, mediaSource)
+        mediaPlayer.start()
+    }
+}

@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Lato-utf8;
+    src: url(Lato-Regular.ttf)
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato-utf8;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+body{
+    position: relative;
+    background: #99CFE9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 15%;
+    gap: 1rem;
+}

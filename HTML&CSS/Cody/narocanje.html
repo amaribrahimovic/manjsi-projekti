@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Cody</title>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">Cody</h1>
+        <ul class="nav">
+          <li><a href="index.html" style="color: #444">Domov</a></li>
+          <li><a href="narocanje.html" style="color: #444">Naročanje</a></li>
+          <li><a href="registracija.html" style="color: #444">Registracija</a></li>
+          <li><a href="prijava.html" style="color: #444">Prijava</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+            <div class="forma">
+        <section>
+        Ime spletne strani: <input type="text" placeholder="Npr. Cody" required>
+        </section>
+        <section>
+        Namen:  <select name="spletnaStran" id="#izbira" required>
+                    <option value="biznis">Biznis</option>
+                    <option value="blog">Blog</option>
+                    <option value="osebna">Osebna</option>
+                </select>
+        </section>
+        <section>
+        Dodaten opis: <input type="text" required si>
+        </section>
+        <section>
+        Naloži slike: <input type="file">
+        </section>
+        <section>
+        <input type="submit" value="Naroči">
+        </section>
+        </div>
+
+    <!-- Footer -->
+    <footer class="section-footer py-4">
+      <div class="container">
+        <div>
+          <h2 class="text-2 mb-1" style="font-size: 2.6rem;">Družabna omrežja</h2>
+          <a href="http://twitter.com">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="http://facebook.com">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="http://youtube.com">
+            <i class="fab fa-youtube fa-2x"></i>
+          </a>
+        </div>
+        <div>
+          <h3>Podjetje</h3>
+          <ul>
+            <li><a href="#">Naše Storitve</a></li>
+            <li><a href="#">O Nas</a></li>
+            <li><a href="#">Pravilnik zasebnosti</a></li>
+            <li><a href="#">Pogoji storitev</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Blogi</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Naročitev</h3>
+          <p>
+            Naročite se na naše spletne novice
+          </p>
+          <form
+            class="mt-1"
+            name="email-form"
+            method="POST"
+            data-netlify="true"
+          >
+            <div class="email-form">
+              <span class="form-control-wrap"
+                ><input
+                  type="email"
+                  name="email"
+                  id="email"
+                  size="40"
+                  class="form-control"
+                  placeholder="E-mail"/></span
+              ><button type="submit" value="Submit" class="form-control submit">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

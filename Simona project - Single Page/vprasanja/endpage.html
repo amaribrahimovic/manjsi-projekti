@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="endpage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Konec</h1>
+    <h2>Število pravilnih odgovorov: </h2>
+    <h3></h3>
+
+<script>
+    const h3 = document.querySelector('h3');
+    const counter = localStorage.count;
+    console.log(typeof counter);
+    let counter2 = 0;
+    for (let i = 0; i < counter.length - 1; i++) {
+        counter2++
+    }
+    
+    h3.innerHTML = `${counter2} / 25`;
+    localStorage.count = 0;
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Yu-Gi-Oh! Card Creator</title>
+</head>
+<body>
+    <main>
+        <div class="create">
+            <form>
+                <label for="type">Card Type:</label>
+                <select name="type" id="type">
+                    <option value="monster">Monster</option>
+                    <option value="spell">Spell</option>
+                    <option value="trap">Trap</option>
+                </select>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <label for="attribute">Attribute:</label>
+                <select id="attribute">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="wind">Wind</option>
+                    <option value="earth">Earth</option>
+                    <option value="divine">Divine</option>
+                </select>
+                <label for="level">Level:</label>
+                <input type="number" min="0" max="12" id="level">
+                <label for="picture">Picture:</label>
+                <input type="file" id="picture">
+                <label for="description">Description:</label>
+                <input type="text" id="description">
+                <label for="atk">ATK:</label>
+                <input type="number" id="atk">
+                <label for="defs">DEF:</label>
+                <input type="number" id="def">
+
+                <button>Create</button>
+            </form>
+        </div>
+        <div class="card-preview">
+            <div class="title"><h1 id="name-text">Yu-Gi-Oh! Card Maker</h1> <img src="light.svg" width="32px" height="32px" id="attr-text"></div>
+            <div class="stars"><img src="star.svg" height="32px" width="32px" id="star-text"></div>
+            <img src="img1.jpg" class="big-img">
+            <div class="description">
+                <p id="desc-text">Weolcome to Yu-Gi-Oh! Card Maker! Here you can create your own customizable Yu-Gi-Oh cards! Use your imagination to create the card of your dreams!</p>
+                <div class="stats">
+                    ATK/<h2 id="atk-text">3000</h2>
+                    DEF/<h2 id="def-text">2500</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
